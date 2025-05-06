@@ -49,7 +49,7 @@ const Navbar = () => {
     <>
       <nav 
         className={`w-full h-[10vh] fixed top-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-black/80' : 'bg-black/60'
+          scrolled ? 'bg-[#fefefe]/95 shadow-md' : 'bg-[#fefefe]/85'
         }`}
       >
         <div className="max-w-[95vw] mx-auto px-4 h-full flex items-center justify-between">
@@ -66,7 +66,7 @@ const Navbar = () => {
           </div>
           
           {/* Nav Links with improved readability */}
-          <div className="hidden md:flex items-center space-x-12 px-6 py-2 rounded-full border border-blue-400/30">
+          <div className="hidden md:flex items-center space-x-12 px-6 py-2 rounded-full border border-blue-500/30 bg-white/50 backdrop-blur-sm">
             <NavLink to="/" label="Home" active={activeLink === 'Home'} />
             <NavLink to="/executives" label="Executives" active={activeLink === 'Executives'} />
             <NavLink to="/teams" label="Team" active={activeLink === 'Team'} />
@@ -103,9 +103,9 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div 
-        className={`fixed top-0 right-0 w-64 h-full bg-black/90 z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 w-64 h-full bg-[#fefefe]/95 z-50 transform transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden`}
+        } md:hidden shadow-lg`}
       >
         <div className="h-[10vh] flex items-center justify-end px-4">
           <button 
@@ -150,26 +150,26 @@ const NavLink = ({ to, label, active, isHighlighted }) => {
       <Link
         to={to}
         className={`text-[1.8vh] font-medium tracking-wide transition duration-300 ${
-          active ? 'text-blue-300' : 'text-white'
-        } ${isHighlighted ? 'text-blue-200' : ''}`}
+          active ? 'text-blue-600' : 'text-gray-800'
+        } ${isHighlighted ? 'text-blue-700' : ''}`}
         aria-label={`Navigate to ${label}`}
       >
         {label}
         {isHighlighted && (
-          <span className="ml-1 inline-block w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"></span>
+          <span className="ml-1 inline-block w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></span>
         )}
       </Link>
       
       {/* Animated underline */}
       <span 
-        className={`absolute left-0 bottom-[-4px] h-[2px] bg-blue-400 transition-all duration-300 ${
+        className={`absolute left-0 bottom-[-4px] h-[2px] bg-blue-600 transition-all duration-300 ${
           active ? 'w-full' : 'w-0 group-hover:w-full'
         }`} 
       />
       
       {/* Subtle glow effect */}
       {active && (
-        <span className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-blue-400 blur-sm"></span>
+        <span className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-blue-600 blur-sm"></span>
       )}
     </div>
   );
@@ -180,12 +180,12 @@ const MobileNavLink = ({ to, label, active, isHighlighted }) => {
     <Link
       to={to}
       className={`block py-2 border-b border-blue-400/20 ${
-        active ? 'text-blue-300' : 'text-white'
-      } ${isHighlighted ? 'text-blue-200' : ''} text-lg font-medium transition duration-300`}
+        active ? 'text-blue-600' : 'text-gray-800'
+      } ${isHighlighted ? 'text-blue-700' : ''} text-lg font-medium transition duration-300`}
     >
       {label}
       {isHighlighted && (
-        <span className="ml-1 inline-block w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"></span>
+        <span className="ml-1 inline-block w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></span>
       )}
     </Link>
   );

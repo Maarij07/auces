@@ -6,7 +6,6 @@ import img3 from '../assets/laiba.jpg'
 import img4 from '../assets/mashal.jpg'
 import img5 from '../assets/muskan.jpg'
 import img6 from '../assets/omema.jpg'
-import img7 from '../assets/talha.jpg'
 
 const Teams = () => {
   // Team members data with Asian names
@@ -16,8 +15,7 @@ const Teams = () => {
     { image: img3, text: '.' },
     { image: img4, text: '.' },
     { image: img5, text: '.' },
-    { image: img6, text: '.' },
-    { image: img7, text: '.' }
+    { image: img6, text: '.' }
   ];
 
   return (
